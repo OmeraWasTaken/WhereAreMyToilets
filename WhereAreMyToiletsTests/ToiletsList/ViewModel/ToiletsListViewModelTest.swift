@@ -18,6 +18,40 @@ final class ToiletsListViewModelTest: XCTestCase {
         // THEN
         XCTAssertEqual(sut.result.count, 2)
     }
+    
+    func testFilterPrmGivenYes() {
+        // GIVEN
+        let mock = ToiletRequestMock()
+        let sut = ToiletsListViewModel(request: mock)
+        // WHEN
+        sut.filterForPrm(with: "Oui")
+        // THEN
+        XCTAssertEqual(sut.result.count, 2)
+    }
+    
+    func testFilterPrmGivenNo() {
+        func testFilterPrmGivenYes() {
+            // GIVEN
+            let mock = ToiletRequestMock()
+            let sut = ToiletsListViewModel(request: mock)
+            // WHEN
+            sut.filterForPrm(with: "Non")
+            // THEN
+            XCTAssertEqual(sut.result.count, 0)
+        }
+    }
+    
+    func testFilterPrmGivenBoth() {
+        func testFilterPrmGivenYes() {
+            // GIVEN
+            let mock = ToiletRequestMock()
+            let sut = ToiletsListViewModel(request: mock)
+            // WHEN
+            sut.filterForPrm(with: nil)
+            // THEN
+            XCTAssertEqual(sut.result.count, 2)
+        }
+    }
 }
 
 final private class ToiletRequestMock: ToiletRequestInterface {

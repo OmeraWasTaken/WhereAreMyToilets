@@ -10,6 +10,7 @@ import Combine
 final class ToiletsListViewModel {
     var maxNumberOfToilets: Int?
     var result: [ToiletsDTO] = []
+    var originalResult: [ToiletsDTO] = []
     let request: ToiletRequestInterface
     
     init(request: ToiletRequestInterface = ToiletRequest()) {
@@ -21,10 +22,21 @@ final class ToiletsListViewModel {
         request.getToilet(start: start, handler: { result in
             switch result {
             case let .success(value):
+                self.originalResult = value?.records ?? []
                 self.result = value?.records ?? []
             case .failure:
                 break
             }
+        })
+    }
+    
+    func filterForPrm(with value: String?) {
+        guard let value = value else {
+            result = originalResult
+            return
+        }
+        result = originalResult.filter({ result in
+            return result.fields.accessPrm == value
         })
     }
 }
