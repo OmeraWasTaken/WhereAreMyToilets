@@ -39,7 +39,7 @@ final class ToiletsListCellViewModel {
         }
         let value = CLLocation(latitude: CLLocationDegrees(localisation[0]), longitude: CLLocationDegrees(localisation[1]))
         value.distance(from: currentLocalisation)
-        return String(format: "%.2f", (value.distance(from: currentLocalisation) / 1000))
+        return String(format: "%.2f", (value.distance(from: currentLocalisation) / 1000)) + " km"
     }
     
     func getSchedule() -> String {

@@ -43,13 +43,11 @@ enum TabBarPages {
 
 protocol TabCoordinatorProtocol: WhereAreMyToiletsCoordinatorInterface {
     var tabBarController: UITabBarController { get set }
-    func selectPage(_ page: TabBarPages)
-    func setSelectedIndex(_ index: Int)
-    func currentPage() -> TabBarPages?
 }
 
 class TabCoordinator: NSObject, TabCoordinatorProtocol {
-    var navigationController: UINavigationController
+    private var navigationController: UINavigationController
+    private let useCase = GetToiletsUseCase()
     var tabBarController: UITabBarController
     
     required init(_ navigationController: UINavigationController) {
@@ -82,27 +80,15 @@ class TabCoordinator: NSObject, TabCoordinatorProtocol {
 
         switch pages {
         case .listing:
-            let viewModel = ToiletsListViewModel()
+            let viewModel = ToiletsListViewModel(useCase: useCase)
             let listView = ToiletsListView(with: viewModel)
             navController.pushViewController(listView, animated: true)
         case .map:
-            let view = UIViewController()
-            view.view.backgroundColor = .white
+            let viewModel = MapViewModel(useCase: useCase)
+            let view = MapViewController(with: viewModel)
             navController.pushViewController(view, animated: true)
         }
         return navController
-    }
-    
-    func currentPage() -> TabBarPages? { TabBarPages.init(index: tabBarController.selectedIndex) }
-
-    func selectPage(_ page: TabBarPages) {
-        tabBarController.selectedIndex = page.pageOrderNumber()
-    }
-    
-    func setSelectedIndex(_ index: Int) {
-        guard let page = TabBarPages.init(index: index) else { return }
-        
-        tabBarController.selectedIndex = page.pageOrderNumber()
     }
 }
 

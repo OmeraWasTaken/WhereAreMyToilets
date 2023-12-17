@@ -95,7 +95,7 @@ final class ToiletsListCellView: UITableViewCell {
     
     private func setupDistanceLabel() {
         self.addSubview(distanceLabel)
-        distanceLabel.text = "Distance: " + (self.viewModel?.getLocalisation() ?? "") + " km"
+        distanceLabel.text = "Distance: " + (self.viewModel?.getLocalisation() ?? "")
         NSLayoutConstraint.activate([
             distanceLabel.topAnchor.constraint(equalTo: accessPrmLabel.bottomAnchor, constant: 8),
             distanceLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
