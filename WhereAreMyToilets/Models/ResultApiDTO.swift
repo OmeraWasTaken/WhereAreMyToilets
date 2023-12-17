@@ -13,7 +13,7 @@ struct ResultApiDTO: Decodable, Equatable {
     
     enum CodingKeys: String, CodingKey {
         case numberOfItem = "nhits"
-        case records
+        case records = "records"
     }
     
     init(from decoder: Decoder) throws {

@@ -13,35 +13,29 @@ final class ToiletsDTOTest: XCTestCase {
         // GIVEN
         let toilets = Data("""
                            {
-                           "type": "SANISETTE",
-                           "statut":null,
-                           "adresse":"BOULEVARD SUCHET",
-                           "arrondissement":75016,
-                           "horaire":"6 h - 22 h",
-                           "acces_pmr":"Oui",
-                           "relais_bebe":null,
-                           "url_fiche_equipement":null,
-                           "geo_shape":{
-                           "type":"Feature",
-                           "geometry":{
-                           "coordinates":[
-                           [
-                           2.2682280857896977,
-                           48.8623619666065
-                           ]
+                           "fields" : {
+                           "geo_shape" : {
+                             "type" : "MultiPoint",
+                             "coordinates" : [
+                               [
+                                 2.2682280857896977,
+                                 48.8623619666065
+                               ]
+                             ]
+                           },
+                           "arrondissement" : 75016,
+                           "complement_adresse" : "numero_de_voie nom_de_voie",
+                           "acces_pmr" : "Oui",
+                           "geo_point_2d" : [
+                             48.8623619666065,
+                             2.2682280857896977
                            ],
-                           "type":"MultiPoint"
-                           },
-                           "properties":{
+                           "source" : "http://opendata.paris.fr",
+                           "gestionnaire" : "Toilette publique de la Ville de Paris",
+                           "adresse" : "BOULEVARD SUCHET",
+                           "horaire" : "6 h - 22 h",
+                           "type" : "SANISETTE"
                            }
-                           },
-                           "geo_point_2d":{
-                           "lon":2.2682280857896977,
-                           "lat":48.8623619666065
-                           },
-                           "gestionnaire":"Toilette publique de la Ville de Paris",
-                           "source":"http://opendata.paris.fr",
-                           "complement_adresse":"numero_de_voie nom_de_voie"
                            }
                            """.utf8)
            // WHEN

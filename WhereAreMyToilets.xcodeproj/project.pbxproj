@@ -7,8 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD451BAF2B2E512F00430BAE /* FieldsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD451BAE2B2E512F00430BAE /* FieldsDTO.swift */; };
+		AD451BB12B2EF6F700430BAE /* ToiletsListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD451BB02B2EF6F700430BAE /* ToiletsListCellView.swift */; };
+		AD451BB32B2EF70E00430BAE /* ToiletsListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD451BB22B2EF70E00430BAE /* ToiletsListCellViewModel.swift */; };
+		AD451BB52B2F03AF00430BAE /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD451BB42B2F03AF00430BAE /* Tools.swift */; };
+		AD451BB72B2F202A00430BAE /* ToiletsListCellViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD451BB62B2F202A00430BAE /* ToiletsListCellViewModelTest.swift */; };
+		AD451BB92B2F238800430BAE /* ToiletsListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD451BB82B2F238800430BAE /* ToiletsListViewModelTest.swift */; };
+		AD451BBE2B2F343800430BAE /* FieldDTOTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD451BBD2B2F343800430BAE /* FieldDTOTest.swift */; };
+		ADAD480E2B2E4C8200972776 /* FLEX in Frameworks */ = {isa = PBXBuildFile; productRef = ADAD480D2B2E4C8200972776 /* FLEX */; };
 		ADFAD0B82B2CF02E00F9DB77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFAD0B72B2CF02E00F9DB77 /* AppDelegate.swift */; };
-		ADFAD0BF2B2CF02E00F9DB77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADFAD0BD2B2CF02E00F9DB77 /* Main.storyboard */; };
 		ADFAD0C22B2CF02E00F9DB77 /* WhereAreMyToilets.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ADFAD0C02B2CF02E00F9DB77 /* WhereAreMyToilets.xcdatamodeld */; };
 		ADFAD0C42B2CF03100F9DB77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADFAD0C32B2CF03100F9DB77 /* Assets.xcassets */; };
 		ADFAD0C72B2CF03100F9DB77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADFAD0C52B2CF03100F9DB77 /* LaunchScreen.storyboard */; };
@@ -21,6 +28,9 @@
 		ADFAD0FE2B2E134D00F9DB77 /* ResultApiDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFAD0FD2B2E134D00F9DB77 /* ResultApiDTO.swift */; };
 		ADFAD1002B2E197F00F9DB77 /* ResultApiDTOTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFAD0FF2B2E197F00F9DB77 /* ResultApiDTOTest.swift */; };
 		ADFAD1022B2E1CBF00F9DB77 /* ToiletRequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFAD1012B2E1CBF00F9DB77 /* ToiletRequestTest.swift */; };
+		ADFAD10C2B2E2CA100F9DB77 /* ToiletsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFAD10B2B2E2CA100F9DB77 /* ToiletsListViewModel.swift */; };
+		ADFAD10E2B2E2CBC00F9DB77 /* ToiletsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFAD10D2B2E2CBC00F9DB77 /* ToiletsListView.swift */; };
+		ADFAD1112B2E31D700F9DB77 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFAD1102B2E31D700F9DB77 /* TabBarCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +44,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD451BAE2B2E512F00430BAE /* FieldsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldsDTO.swift; sourceTree = "<group>"; };
+		AD451BB02B2EF6F700430BAE /* ToiletsListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToiletsListCellView.swift; sourceTree = "<group>"; };
+		AD451BB22B2EF70E00430BAE /* ToiletsListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToiletsListCellViewModel.swift; sourceTree = "<group>"; };
+		AD451BB42B2F03AF00430BAE /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
+		AD451BB62B2F202A00430BAE /* ToiletsListCellViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToiletsListCellViewModelTest.swift; sourceTree = "<group>"; };
+		AD451BB82B2F238800430BAE /* ToiletsListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToiletsListViewModelTest.swift; sourceTree = "<group>"; };
+		AD451BBD2B2F343800430BAE /* FieldDTOTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldDTOTest.swift; sourceTree = "<group>"; };
 		ADFAD0B42B2CF02E00F9DB77 /* WhereAreMyToilets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereAreMyToilets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADFAD0B72B2CF02E00F9DB77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ADFAD0BE2B2CF02E00F9DB77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ADFAD0C12B2CF02E00F9DB77 /* WhereAreMyToilets.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WhereAreMyToilets.xcdatamodel; sourceTree = "<group>"; };
 		ADFAD0C32B2CF03100F9DB77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADFAD0C62B2CF03100F9DB77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +67,9 @@
 		ADFAD0FD2B2E134D00F9DB77 /* ResultApiDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultApiDTO.swift; sourceTree = "<group>"; };
 		ADFAD0FF2B2E197F00F9DB77 /* ResultApiDTOTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultApiDTOTest.swift; sourceTree = "<group>"; };
 		ADFAD1012B2E1CBF00F9DB77 /* ToiletRequestTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToiletRequestTest.swift; sourceTree = "<group>"; };
+		ADFAD10B2B2E2CA100F9DB77 /* ToiletsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToiletsListViewModel.swift; sourceTree = "<group>"; };
+		ADFAD10D2B2E2CBC00F9DB77 /* ToiletsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToiletsListView.swift; sourceTree = "<group>"; };
+		ADFAD1102B2E31D700F9DB77 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADAD480E2B2E4C8200972776 /* FLEX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +91,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD451BBA2B2F33F400430BAE /* ToiletsList */ = {
+			isa = PBXGroup;
+			children = (
+				AD451BBC2B2F340800430BAE /* ViewModel */,
+				AD451BBB2B2F33FC00430BAE /* CellViewModel */,
+			);
+			path = ToiletsList;
+			sourceTree = "<group>";
+		};
+		AD451BBB2B2F33FC00430BAE /* CellViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AD451BB62B2F202A00430BAE /* ToiletsListCellViewModelTest.swift */,
+			);
+			path = CellViewModel;
+			sourceTree = "<group>";
+		};
+		AD451BBC2B2F340800430BAE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AD451BB82B2F238800430BAE /* ToiletsListViewModelTest.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		ADFAD0AB2B2CF02E00F9DB77 = {
 			isa = PBXGroup;
 			children = (
@@ -92,15 +137,16 @@
 		ADFAD0B62B2CF02E00F9DB77 /* WhereAreMyToilets */ = {
 			isa = PBXGroup;
 			children = (
+				ADFAD1052B2E2C5500F9DB77 /* ToiletsList */,
 				ADFAD0F52B2DF25800F9DB77 /* Models */,
 				ADFAD0EE2B2DB8E100F9DB77 /* Network */,
 				ADFAD0EB2B2CF1E000F9DB77 /* Coordinator */,
 				ADFAD0B72B2CF02E00F9DB77 /* AppDelegate.swift */,
-				ADFAD0BD2B2CF02E00F9DB77 /* Main.storyboard */,
 				ADFAD0C32B2CF03100F9DB77 /* Assets.xcassets */,
 				ADFAD0C52B2CF03100F9DB77 /* LaunchScreen.storyboard */,
 				ADFAD0C82B2CF03100F9DB77 /* Info.plist */,
 				ADFAD0C02B2CF02E00F9DB77 /* WhereAreMyToilets.xcdatamodeld */,
+				AD451BB42B2F03AF00430BAE /* Tools.swift */,
 			);
 			path = WhereAreMyToilets;
 			sourceTree = "<group>";
@@ -108,6 +154,7 @@
 		ADFAD0D02B2CF03100F9DB77 /* WhereAreMyToiletsTests */ = {
 			isa = PBXGroup;
 			children = (
+				AD451BBA2B2F33F400430BAE /* ToiletsList */,
 				ADFAD1042B2E2ABC00F9DB77 /* Network */,
 				ADFAD1032B2E2AB400F9DB77 /* Models */,
 			);
@@ -118,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				ADFAD0EC2B2CF21500F9DB77 /* WhereAreMyToiletsCoordinator.swift */,
+				ADFAD1102B2E31D700F9DB77 /* TabBarCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -136,6 +184,7 @@
 			children = (
 				ADFAD0F72B2DF27B00F9DB77 /* ToiletsDTO.swift */,
 				ADFAD0FD2B2E134D00F9DB77 /* ResultApiDTO.swift */,
+				AD451BAE2B2E512F00430BAE /* FieldsDTO.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -145,6 +194,7 @@
 			children = (
 				ADFAD0FB2B2E0F3F00F9DB77 /* ToiletsDTOTest.swift */,
 				ADFAD0FF2B2E197F00F9DB77 /* ResultApiDTOTest.swift */,
+				AD451BBD2B2F343800430BAE /* FieldDTOTest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -156,6 +206,57 @@
 				ADFAD1012B2E1CBF00F9DB77 /* ToiletRequestTest.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		ADFAD1052B2E2C5500F9DB77 /* ToiletsList */ = {
+			isa = PBXGroup;
+			children = (
+				ADFAD1082B2E2C7800F9DB77 /* Cell */,
+				ADFAD1072B2E2C6800F9DB77 /* ViewModel */,
+				ADFAD1062B2E2C5F00F9DB77 /* View */,
+			);
+			path = ToiletsList;
+			sourceTree = "<group>";
+		};
+		ADFAD1062B2E2C5F00F9DB77 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ADFAD10D2B2E2CBC00F9DB77 /* ToiletsListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ADFAD1072B2E2C6800F9DB77 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ADFAD10B2B2E2CA100F9DB77 /* ToiletsListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ADFAD1082B2E2C7800F9DB77 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				ADFAD10A2B2E2C8300F9DB77 /* ViewModel */,
+				ADFAD1092B2E2C7E00F9DB77 /* View */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		ADFAD1092B2E2C7E00F9DB77 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AD451BB02B2EF6F700430BAE /* ToiletsListCellView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ADFAD10A2B2E2C8300F9DB77 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AD451BB22B2EF70E00430BAE /* ToiletsListCellViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +275,9 @@
 			dependencies = (
 			);
 			name = WhereAreMyToilets;
+			packageProductDependencies = (
+				ADAD480D2B2E4C8200972776 /* FLEX */,
+			);
 			productName = WhereAreMyToilets;
 			productReference = ADFAD0B42B2CF02E00F9DB77 /* WhereAreMyToilets.app */;
 			productType = "com.apple.product-type.application";
@@ -224,6 +328,9 @@
 				Base,
 			);
 			mainGroup = ADFAD0AB2B2CF02E00F9DB77;
+			packageReferences = (
+				ADAD480C2B2E4C8100972776 /* XCRemoteSwiftPackageReference "FLEX" */,
+			);
 			productRefGroup = ADFAD0B52B2CF02E00F9DB77 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -241,7 +348,6 @@
 			files = (
 				ADFAD0C72B2CF03100F9DB77 /* LaunchScreen.storyboard in Resources */,
 				ADFAD0C42B2CF03100F9DB77 /* Assets.xcassets in Resources */,
-				ADFAD0BF2B2CF02E00F9DB77 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,11 +366,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADFAD0F22B2DCB4A00F9DB77 /* ToiletRequest.swift in Sources */,
+				ADFAD10C2B2E2CA100F9DB77 /* ToiletsListViewModel.swift in Sources */,
 				ADFAD0FE2B2E134D00F9DB77 /* ResultApiDTO.swift in Sources */,
 				ADFAD0B82B2CF02E00F9DB77 /* AppDelegate.swift in Sources */,
+				AD451BAF2B2E512F00430BAE /* FieldsDTO.swift in Sources */,
+				AD451BB32B2EF70E00430BAE /* ToiletsListCellViewModel.swift in Sources */,
 				ADFAD0F82B2DF27B00F9DB77 /* ToiletsDTO.swift in Sources */,
 				ADFAD0ED2B2CF21500F9DB77 /* WhereAreMyToiletsCoordinator.swift in Sources */,
+				AD451BB12B2EF6F700430BAE /* ToiletsListCellView.swift in Sources */,
 				ADFAD0C22B2CF02E00F9DB77 /* WhereAreMyToilets.xcdatamodeld in Sources */,
+				ADFAD10E2B2E2CBC00F9DB77 /* ToiletsListView.swift in Sources */,
+				AD451BB52B2F03AF00430BAE /* Tools.swift in Sources */,
+				ADFAD1112B2E31D700F9DB77 /* TabBarCoordinator.swift in Sources */,
 				ADFAD0F02B2DC86300F9DB77 /* ToiletEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,8 +387,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADFAD1022B2E1CBF00F9DB77 /* ToiletRequestTest.swift in Sources */,
+				AD451BB92B2F238800430BAE /* ToiletsListViewModelTest.swift in Sources */,
 				ADFAD1002B2E197F00F9DB77 /* ResultApiDTOTest.swift in Sources */,
+				AD451BBE2B2F343800430BAE /* FieldDTOTest.swift in Sources */,
 				ADFAD0FA2B2E0BA800F9DB77 /* ToiletEndpointTest.swift in Sources */,
+				AD451BB72B2F202A00430BAE /* ToiletsListCellViewModelTest.swift in Sources */,
 				ADFAD0FC2B2E0F3F00F9DB77 /* ToiletsDTOTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,14 +407,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		ADFAD0BD2B2CF02E00F9DB77 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ADFAD0BE2B2CF02E00F9DB77 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		ADFAD0C52B2CF03100F9DB77 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -362,7 +470,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -419,7 +527,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -440,7 +548,6 @@
 				INFOPLIST_FILE = WhereAreMyToilets/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -467,7 +574,6 @@
 				INFOPLIST_FILE = WhereAreMyToilets/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -552,6 +658,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ADAD480C2B2E4C8100972776 /* XCRemoteSwiftPackageReference "FLEX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/FLEXTool/FLEX";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.22.10;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ADAD480D2B2E4C8200972776 /* FLEX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ADAD480C2B2E4C8100972776 /* XCRemoteSwiftPackageReference "FLEX" */;
+			productName = FLEX;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		ADFAD0C02B2CF02E00F9DB77 /* WhereAreMyToilets.xcdatamodeld */ = {

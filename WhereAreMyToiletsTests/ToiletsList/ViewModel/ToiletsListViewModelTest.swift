@@ -1,16 +1,27 @@
 //
-//  ResultApiDTOTest.swift
+//  ToiletsListViewModelTest.swift
 //  WhereAreMyToiletsTests
 //
-//  Created by Quentin Richard on 16/12/2023.
+//  Created by Quentin Richard on 17/12/2023.
 //
 
 import XCTest
+import CoreLocation
 @testable import WhereAreMyToilets
 
-final class ResultApiDTOTest: XCTestCase {
-    func testDecodingToiletsInformationSucced() throws {
+final class ToiletsListViewModelTest: XCTestCase {
+    func testGetToilets() {
         // GIVEN
+        let mock = ToiletRequestMock()
+        let sut = ToiletsListViewModel(request: mock)
+        // WHEN
+        // THEN
+        XCTAssertEqual(sut.result.count, 2)
+    }
+}
+
+final private class ToiletRequestMock: ToiletRequestInterface {
+    func getToilet(start: String, handler: @escaping (Result<WhereAreMyToilets.ResultApiDTO?, Error>) -> Void) {
         let toilets = Data("""
                            {
                            "nhits" : 617,
@@ -88,9 +99,6 @@ final class ResultApiDTOTest: XCTestCase {
                            ]
                            }
                            """.utf8)
-        // WHEN
-        // THEN
-        XCTAssertNoThrow(try JSONDecoder().decode(ResultApiDTO.self, from: toilets))
+        handler(.success(try? JSONDecoder().decode(ResultApiDTO.self, from: toilets)))
     }
-    
 }

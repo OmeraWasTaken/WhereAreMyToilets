@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import FLEX
 
 protocol WhereAreMyToiletsCoordinatorInterface {
     func start()
@@ -15,14 +16,20 @@ protocol WhereAreMyToiletsCoordinatorInterface {
 class WhereAreMyToiletsCoordinator: WhereAreMyToiletsCoordinatorInterface {
     let window: UIWindow
     let rootViewController: UINavigationController
+    var childCoordinators: [WhereAreMyToiletsCoordinatorInterface] = []
 
     init(window: UIWindow) {
         self.window = window
         rootViewController = UINavigationController()
+
     }
 
     func start() {
         window.rootViewController = rootViewController
         window.makeKeyAndVisible()
+        let tabCoordinator = TabCoordinator.init(rootViewController)
+        tabCoordinator.start()
+        childCoordinators.append(tabCoordinator)
+        FLEXManager.shared.showExplorer()
     }
 }
