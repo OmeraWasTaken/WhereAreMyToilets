@@ -11,6 +11,7 @@ final class ToiletsListViewModel {
     var result: [ToiletsDTO] = []
     private var originalResult: [ToiletsDTO] = []
     private var useCase: GetToiletsUseCaseInterface
+    var cellDidTap: ((FieldsDTO) -> Void) = {_ in }
     
     init(useCase: GetToiletsUseCaseInterface) {
         self.useCase = useCase

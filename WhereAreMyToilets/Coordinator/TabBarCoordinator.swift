@@ -83,6 +83,12 @@ class TabCoordinator: NSObject, TabCoordinatorProtocol {
             let viewModel = ToiletsListViewModel(useCase: useCase)
             let listView = ToiletsListView(with: viewModel)
             navController.pushViewController(listView, animated: true)
+            viewModel.cellDidTap = { value in
+                let viewModel = ToiletDetailsViewModel(field: value)
+                let view = ToiletDetailsView(with: viewModel)
+                navController.modalPresentationStyle = .overCurrentContext
+                navController.present(view, animated: true)
+            }
         case .map:
             let viewModel = MapViewModel(useCase: useCase)
             let view = MapViewController(with: viewModel)
