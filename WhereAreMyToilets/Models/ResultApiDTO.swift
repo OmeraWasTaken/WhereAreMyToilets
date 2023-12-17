@@ -21,4 +21,9 @@ struct ResultApiDTO: Decodable, Equatable {
         self.numberOfItem = try decodedValue.decode(Int.self, forKey: .numberOfItem)
         self.records = try decodedValue.decode([ToiletsDTO].self, forKey: .records)
     }
+    
+    init(numberOfItem: Int, records: [ToiletsDTO]) {
+        self.numberOfItem = numberOfItem
+        self.records = records
+    }
 }

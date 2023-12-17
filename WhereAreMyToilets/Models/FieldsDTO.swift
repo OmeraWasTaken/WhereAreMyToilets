@@ -31,4 +31,18 @@ struct FieldsDTO: Decodable, Equatable {
         self.district = try decodedValue.decode(Int.self, forKey: .district)
         self.accessPrm = try? decodedValue.decode(String.self, forKey: .accessPrm)
     }
+    
+    init(schedule: String?,
+         coordinates: [Float],
+         adress: String?,
+         district: Int,
+         accessPrm: String?
+    ) {
+        self.schedule = schedule
+        self.coordinates = coordinates
+        self.adress = adress
+        self.district = district
+        self.accessPrm = accessPrm
+    }
+
 }

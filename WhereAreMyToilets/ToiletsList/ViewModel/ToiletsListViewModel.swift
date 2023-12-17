@@ -5,28 +5,43 @@
 //  Created by Quentin Richard on 16/12/2023.
 //
 
-import Combine
+import Foundation
 
 final class ToiletsListViewModel {
-    var maxNumberOfToilets: Int = 0
-    var result: [ToiletsDTO] = []
-    var originalResult: [ToiletsDTO] = []
-    let request: ToiletRequestInterface
+    private let toiletPersisting: ToiletsPersistingValue
+    private var maxNumberOfToilets: Int = 0
+    private var originalResult: [ToiletsDTO] = []
+    private let request: ToiletRequestInterface
     
-    init(request: ToiletRequestInterface = ToiletRequest()) {
+    var result: [ToiletsDTO] = []
+    
+    init(request: ToiletRequestInterface = ToiletRequest(),
+         toiletPersisting: ToiletsPersistingValue = ToiletsPersistingValue()) {
         self.request = request
+        self.toiletPersisting = toiletPersisting
     }
     
     func getToilets(start: String, handler: @escaping (() -> Void)) {
         if Int(start) ?? 0 > maxNumberOfToilets { return }
-        request.getToilet(start: start, handler: { result in
+        request.getToilet(start: start, handler: { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case let .success(value):
-                self.maxNumberOfToilets = value?.numberOfItem ?? 0
-                self.originalResult.append(contentsOf: value?.records ?? [])
-                self.result.append(contentsOf: value?.records ?? [])
+                if let value = value {
+                    self.maxNumberOfToilets = value.numberOfItem
+                    self.originalResult.append(contentsOf: value.records)
+                    self.result.append(contentsOf: value.records)
+                    DispatchQueue.main.async {
+                        self.toiletPersisting.clean()
+                        self.toiletPersisting.save(toilets: value)
+                    }
+                } else {
+                    self.getPersitingToilet()
+                }
                 handler()
             case .failure:
+                self.getPersitingToilet()
+                handler()
                 break
             }
         })
@@ -40,5 +55,13 @@ final class ToiletsListViewModel {
         result = originalResult.filter({ result in
             return result.fields.accessPrm == value
         })
+    }
+    
+    private func getPersitingToilet() {
+        if let toilet = toiletPersisting.getToiletsData() {
+            originalResult = toilet.records
+            result = toilet.records
+            maxNumberOfToilets = toilet.numberOfItem
+        }
     }
 }

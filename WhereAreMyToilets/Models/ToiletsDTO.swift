@@ -18,4 +18,8 @@ struct ToiletsDTO: Decodable, Equatable {
         let decodedValue = try decoder.container(keyedBy: CodingKeys.self)
         self.fields = try decodedValue.decode(FieldsDTO.self, forKey: .fields)
     }
+    
+    init(field: FieldsDTO) {
+        self.fields = field
+    }
 }
