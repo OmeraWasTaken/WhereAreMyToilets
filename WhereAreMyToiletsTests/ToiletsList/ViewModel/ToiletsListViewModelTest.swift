@@ -12,44 +12,86 @@ import CoreLocation
 final class ToiletsListViewModelTest: XCTestCase {
     func testGetToilets() {
         // GIVEN
+        let expectation = expectation(description: "Should get an answer")
         let mock = ToiletRequestMock()
         let sut = ToiletsListViewModel(request: mock)
         // WHEN
+        sut.getToilets(start: "0",
+                       handler: {
+            expectation.fulfill()
+        })
         // THEN
         XCTAssertEqual(sut.result.count, 2)
+        wait(for: [expectation], timeout: 0.1)
     }
+    
+    func testGetToiletsWithToMuchItems() {
+        // GIVEN
+        let expectation = expectation(description: "Should get an answer")
+        expectation.isInverted = true
+        let mock = ToiletRequestMock()
+        let sut = ToiletsListViewModel(request: mock)
+        // WHEN
+        sut.getToilets(start: "700",
+                       handler: {
+            XCTFail("We should not call getToilets")
+        })
+        // THEN
+        wait(for: [expectation], timeout: 0.1)
+    }
+
     
     func testFilterPrmGivenYes() {
         // GIVEN
+        let expectation = expectation(description: "Should get an answer")
         let mock = ToiletRequestMock()
         let sut = ToiletsListViewModel(request: mock)
         // WHEN
+        sut.getToilets(start: "0",
+                       handler: {
+            expectation.fulfill()
+        })
         sut.filterForPrm(with: "Oui")
+        
         // THEN
         XCTAssertEqual(sut.result.count, 2)
+        wait(for: [expectation], timeout: 0.1)
     }
     
     func testFilterPrmGivenNo() {
         func testFilterPrmGivenYes() {
             // GIVEN
+            let expectation = expectation(description: "Should get an answer")
             let mock = ToiletRequestMock()
             let sut = ToiletsListViewModel(request: mock)
             // WHEN
+            sut.getToilets(start: "0",
+                           handler: {
+                expectation.fulfill()
+            })
             sut.filterForPrm(with: "Non")
             // THEN
             XCTAssertEqual(sut.result.count, 0)
+            wait(for: [expectation], timeout: 0.1)
         }
     }
     
     func testFilterPrmGivenBoth() {
         func testFilterPrmGivenYes() {
             // GIVEN
+            let expectation = expectation(description: "Should get an answer")
             let mock = ToiletRequestMock()
             let sut = ToiletsListViewModel(request: mock)
             // WHEN
+            sut.getToilets(start: "0",
+                           handler: {
+                expectation.fulfill()
+            })
+
             sut.filterForPrm(with: nil)
             // THEN
             XCTAssertEqual(sut.result.count, 2)
+            wait(for: [expectation], timeout: 0.1)
         }
     }
 }

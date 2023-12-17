@@ -13,12 +13,12 @@ final class ToiletsListCellViewModel {
     private let schedule: String?
     private let localisation: [Float]
     private let currentLocalisation: CLLocation?
-    let accessPrm: String
+    let accessPrm: String?
     
     init(address: String?,
          district: Int,
          schedule: String?,
-         accessPrm: String,
+         accessPrm: String?,
          localisation: [Float],
          currentLocalisation: CLLocation?) {
         self.address = address

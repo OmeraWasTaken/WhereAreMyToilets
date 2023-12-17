@@ -85,7 +85,7 @@ final class ToiletsListCellView: UITableViewCell {
     
     private func setupAccessPrmLabel() {
         self.addSubview(accessPrmLabel)
-        accessPrmLabel.text = "Accée personne a mobilité reduite: " + (viewModel?.accessPrm ?? "")
+        accessPrmLabel.text = "Accée personne a mobilité reduite: " + (viewModel?.accessPrm ?? "Nous n'avons pas l'information")
         NSLayoutConstraint.activate([
             accessPrmLabel.topAnchor.constraint(equalTo: scheduleLabel.bottomAnchor, constant: 8),
             accessPrmLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),

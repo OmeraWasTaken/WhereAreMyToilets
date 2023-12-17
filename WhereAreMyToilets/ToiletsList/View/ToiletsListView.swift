@@ -11,10 +11,13 @@ import UIKit
 final class ToiletsListView: UITableViewController, CLLocationManagerDelegate {
     private let viewModel: ToiletsListViewModel
     private let locationManager = CLLocationManager()
+    private var currentNumberOfElement = 0
     
     init(with viewModel: ToiletsListViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        self.viewModel.getToilets(start: "0",
+                                  handler: { })
     }
     
     required init?(coder: NSCoder) {
@@ -23,9 +26,28 @@ final class ToiletsListView: UITableViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.loadData()
         self.setupView()
         self.locationManagerDidChangeAuthorization(locationManager)
         self.setupFileter()
+        self.setupRefreshController()
+    }
+    
+    func setupRefreshController() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        tableView.refreshControl = refreshControl
+    }
+    
+    @objc func loadData() {
+        self.viewModel.getToilets(start: String(currentNumberOfElement), handler: { [weak self] in
+            guard let self = self else { return }
+            self.currentNumberOfElement += 100
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.refreshControl?.endRefreshing()
+            }
+        })
     }
         
     func setupView() {
@@ -105,5 +127,11 @@ extension ToiletsListView {
     
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == viewModel.result.count - 1 {
+            loadData()
+        }
     }
 }

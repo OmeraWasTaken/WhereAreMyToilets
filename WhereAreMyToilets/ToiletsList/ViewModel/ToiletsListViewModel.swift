@@ -8,22 +8,24 @@
 import Combine
 
 final class ToiletsListViewModel {
-    var maxNumberOfToilets: Int?
+    var maxNumberOfToilets: Int = 0
     var result: [ToiletsDTO] = []
     var originalResult: [ToiletsDTO] = []
     let request: ToiletRequestInterface
     
     init(request: ToiletRequestInterface = ToiletRequest()) {
         self.request = request
-        self.getToilets(start: "0")
     }
     
-    func getToilets(start: String) {
+    func getToilets(start: String, handler: @escaping (() -> Void)) {
+        if Int(start) ?? 0 > maxNumberOfToilets { return }
         request.getToilet(start: start, handler: { result in
             switch result {
             case let .success(value):
-                self.originalResult = value?.records ?? []
-                self.result = value?.records ?? []
+                self.maxNumberOfToilets = value?.numberOfItem ?? 0
+                self.originalResult.append(contentsOf: value?.records ?? [])
+                self.result.append(contentsOf: value?.records ?? [])
+                handler()
             case .failure:
                 break
             }

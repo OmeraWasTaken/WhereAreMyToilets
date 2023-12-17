@@ -13,7 +13,7 @@ struct FieldsDTO: Decodable, Equatable {
     let coordinates: [Float]
     let adress: String?
     let district: Int
-    let accessPrm: String
+    let accessPrm: String?
     
     enum CodingKeys: String, CodingKey {
         case schedule = "horaire"
@@ -29,6 +29,6 @@ struct FieldsDTO: Decodable, Equatable {
         self.coordinates = try decodedValue.decode([Float].self, forKey: .coodinates)
         self.adress = try? decodedValue.decode(String.self, forKey: .adress)
         self.district = try decodedValue.decode(Int.self, forKey: .district)
-        self.accessPrm = try decodedValue.decode(String.self, forKey: .accessPrm)
+        self.accessPrm = try? decodedValue.decode(String.self, forKey: .accessPrm)
     }
 }
